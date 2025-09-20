@@ -207,11 +207,18 @@ function copyEmail() {
     });
 }
 
-// 다크 모드 토글 (선택사항)
+// 다크 모드 토글
 function toggleDarkMode() {
     document.body.classList.toggle('dark-mode');
     const isDarkMode = document.body.classList.contains('dark-mode');
     localStorage.setItem('darkMode', isDarkMode);
+    
+    // 아이콘 애니메이션
+    const themeToggle = document.querySelector('.theme-toggle');
+    themeToggle.style.transform = 'scale(0.8)';
+    setTimeout(() => {
+        themeToggle.style.transform = 'scale(1)';
+    }, 150);
 }
 
 // 페이지 로드 시 다크 모드 설정 복원
@@ -220,6 +227,121 @@ document.addEventListener('DOMContentLoaded', () => {
     if (isDarkMode) {
         document.body.classList.add('dark-mode');
     }
+    
+    // 타이핑 효과 시작
+    startTypewriterEffect();
+    
+    // 숫자 카운트 애니메이션 시작
+    startCounterAnimation();
+});
+
+// 타이핑 효과
+function startTypewriterEffect() {
+    const typewriterElement = document.querySelector('.typewriter');
+    if (!typewriterElement) return;
+    
+    const text = typewriterElement.textContent;
+    typewriterElement.textContent = '';
+    typewriterElement.style.borderRight = '3px solid var(--primary-color)';
+    
+    let i = 0;
+    function typeChar() {
+        if (i < text.length) {
+            typewriterElement.textContent += text.charAt(i);
+            i++;
+            setTimeout(typeChar, 100);
+        } else {
+            // 타이핑 완료 후 커서 깜빡임
+            setTimeout(() => {
+                typewriterElement.style.borderRight = 'none';
+            }, 1000);
+        }
+    }
+    
+    setTimeout(typeChar, 1000);
+}
+
+// 숫자 카운트 애니메이션
+function startCounterAnimation() {
+    const statNumbers = document.querySelectorAll('.stat-number');
+    
+    statNumbers.forEach(stat => {
+        const target = parseInt(stat.textContent);
+        let count = 0;
+        const increment = target / 60; // 1초 동안 애니메이션
+        
+        const timer = setInterval(() => {
+            count += increment;
+            if (count >= target) {
+                stat.textContent = target + '+';
+                clearInterval(timer);
+            } else {
+                stat.textContent = Math.floor(count) + '+';
+            }
+        }, 16);
+    });
+}
+
+// 부드러운 스크롤 개선
+function smoothScrollTo(target) {
+    const element = document.querySelector(target);
+    if (element) {
+        const offsetTop = element.offsetTop - 70;
+        const distance = offsetTop - window.pageYOffset;
+        const duration = 800;
+        let start = null;
+        
+        function animate(currentTime) {
+            if (start === null) start = currentTime;
+            const timeElapsed = currentTime - start;
+            const progress = Math.min(timeElapsed / duration, 1);
+            
+            // easeInOutCubic
+            const easing = progress < 0.5 
+                ? 4 * progress * progress * progress 
+                : 1 - Math.pow(-2 * progress + 2, 3) / 2;
+            
+            window.scrollTo(0, window.pageYOffset + (distance * easing));
+            
+            if (timeElapsed < duration) {
+                requestAnimationFrame(animate);
+            }
+        }
+        
+        requestAnimationFrame(animate);
+    }
+}
+
+// 마우스 추적 효과
+document.addEventListener('mousemove', (e) => {
+    const particles = document.querySelector('.particles-bg');
+    if (particles) {
+        const x = e.clientX / window.innerWidth;
+        const y = e.clientY / window.innerHeight;
+        
+        particles.style.transform = `translate(${x * 20}px, ${y * 20}px)`;
+    }
+});
+
+// 스크롤 트리거 애니메이션
+const observeElements = () => {
+    const elements = document.querySelectorAll('.project-card, .award-card, .timeline-item');
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.animation = 'slideInUp 0.8s ease-out forwards';
+                entry.target.style.animationDelay = `${Math.random() * 0.3}s`;
+            }
+        });
+    }, { threshold: 0.1 });
+    
+    elements.forEach(el => observer.observe(el));
+};
+
+// 페이지 로드 완료 후 관찰 시작
+window.addEventListener('load', () => {
+    observeElements();
 });
 
 // 페이지 로드 완료 시 로딩 애니메이션 제거
