@@ -751,9 +751,81 @@ body {
     font-weight: 500;
 }
 
-/* 학력 섹션 */
+/* Experience Section */
+.experience {
+    padding: 80px 0;
+    background: var(--bg-primary);
+    position: relative;
+}
+
+.experience::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: var(--gradient-secondary);
+    opacity: 0.3;
+}
+
+.experience-timeline {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.experience-timeline::before {
+    content: '';
+    position: absolute;
+    left: 30px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--gradient-secondary);
+}
+
+.experience .timeline-item {
+    display: flex;
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+.experience .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: 24px;
+    top: 10px;
+    width: 14px;
+    height: 14px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    border: 3px solid var(--bg-primary);
+    box-shadow: 0 0 0 3px var(--primary-color);
+}
+
+.experience-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+/* Education Section */
 .education {
     padding: 80px 0;
+    background: var(--bg-secondary);
+}
+
+.education::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: var(--gradient-secondary);
+    opacity: 0.3;
 }
 
 .education-timeline {
@@ -820,8 +892,31 @@ body {
 }
 
 .timeline-content p {
-    color: #666;
+    color: var(--text-secondary);
     line-height: 1.6;
+}
+
+/* Education achievements */
+.education-achievements {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.achievement-tag {
+    background: var(--accent-color);
+    color: white;
+    padding: 4px 12px;
+    border-radius: 15px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.achievement-tag:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-medium);
 }
 
 /* 프로젝트 섹션 */
@@ -1313,6 +1408,18 @@ body {
     }
 
     .timeline-item::before {
+        display: none;
+    }
+
+    .experience .timeline-item {
+        flex-direction: column;
+    }
+
+    .experience-timeline::before {
+        display: none;
+    }
+
+    .experience .timeline-item::before {
         display: none;
     }
 
