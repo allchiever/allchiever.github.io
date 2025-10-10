@@ -353,6 +353,7 @@ body {
 .hero-stats {
     display: flex;
     gap: 2rem;
+    margin-top: 2.5rem;
     margin-bottom: 2rem;
     animation: slideInUp 0.8s ease-out 1s both;
 }
@@ -397,6 +398,7 @@ body {
 .hero-buttons {
     display: flex;
     gap: 1rem;
+    margin-top: 2rem;
     margin-bottom: 2rem;
     animation: slideInUp 0.8s ease-out 1.4s both;
 }
@@ -499,15 +501,18 @@ body {
 }
 
 .profile-img {
-    width: 350px;
-    height: 350px;
-    object-fit: cover;
+    width: 400px;
+    height: 400px;
+    object-fit: contain;
+    object-position: center;
     border-radius: 50%;
     box-shadow: var(--shadow-large);
     border: 4px solid var(--bg-secondary);
     transition: all 0.3s ease;
     position: relative;
     z-index: 2;
+    padding: 12px;
+    background: var(--bg-primary);
 }
 
 .profile-img:hover {
@@ -517,8 +522,10 @@ body {
 /* 떠다니는 요소들 */
 .floating-elements {
     position: absolute;
-    width: 100%;
-    height: 100%;
+    width: 120%;
+    height: 120%;
+    top: -10%;
+    left: -10%;
     pointer-events: none;
 }
 
@@ -540,23 +547,23 @@ body {
 }
 
 .floating-item:nth-child(1) {
-    top: 10%;
-    left: 10%;
+    top: 8%;
+    left: 2%;
 }
 
 .floating-item:nth-child(2) {
-    top: 20%;
-    right: 10%;
+    top: 18%;
+    right: 2%;
 }
 
 .floating-item:nth-child(3) {
-    bottom: 20%;
-    left: 15%;
+    bottom: 18%;
+    left: 5%;
 }
 
 .floating-item:nth-child(4) {
-    bottom: 10%;
-    right: 15%;
+    bottom: 8%;
+    right: 5%;
 }
 
 @keyframes float-around {
@@ -629,7 +636,7 @@ body {
     display: grid;
     grid-template-columns: 2fr 1fr;
     gap: 4rem;
-    align-items: start;
+    align-items: stretch;
 }
 
 .about-text h3 {
@@ -656,6 +663,32 @@ body {
     line-height: 1.8;
     margin-bottom: 2rem;
     color: var(--text-secondary);
+}
+
+.about-image {
+    width: 70%;
+    margin: 2rem 0;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-image:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.achievement-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.about-image:hover .achievement-img {
+    transform: scale(1.03);
 }
 
 .skills h4 {
@@ -707,6 +740,8 @@ body {
     display: flex;
     flex-direction: column;
     gap: 2rem;
+    justify-content: center;
+    height: 100%;
 }
 
 .stat-item {
@@ -804,6 +839,7 @@ body {
     box-shadow: 0 0 0 3px var(--primary-color);
 }
 
+
 .experience-tech {
     display: flex;
     flex-wrap: wrap;
@@ -864,10 +900,15 @@ body {
 }
 
 .timeline-date {
-    min-width: 120px;
+    width: 180px;
     font-weight: 600;
     color: #4A90E2;
     margin-right: 2rem;
+    text-align: right;
+    padding-left: 4rem;
+    padding-right: 0;
+    flex-shrink: 0;
+    white-space: nowrap;
 }
 
 .timeline-content {
@@ -883,6 +924,19 @@ body {
     font-size: 1.3rem;
     margin-bottom: 0.5rem;
     color: #333;
+}
+
+.company-text-logo {
+    width: 200px;
+    height: 50px;
+    object-fit: contain;
+    margin-bottom: 1rem;
+    border-radius: 4px;
+}
+
+.company-text-logo[alt*="Yonsei"] {
+    height: 40px;
+    width: auto;
 }
 
 .timeline-content h4 {
@@ -1373,6 +1427,18 @@ body {
 
     .hero-buttons {
         justify-content: center;
+    }
+
+    .profile-img {
+        width: 280px;
+        height: 280px;
+        padding: 10px;
+    }
+
+    .floating-item {
+        width: 45px;
+        height: 45px;
+        font-size: 1.2rem;
     }
 
     .about-content {
