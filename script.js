@@ -249,7 +249,7 @@ function startTypewriterEffect() {
         if (i < text.length) {
             typewriterElement.textContent += text.charAt(i);
             i++;
-            setTimeout(typeChar, 100);
+            setTimeout(typeChar, 70);
         } else {
             // 타이핑 완료 후 커서 깜빡임
             setTimeout(() => {
