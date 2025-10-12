@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - [Your Name Here]</title>
+    <title>Jaeha Choi</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
@@ -19,17 +19,17 @@
                 <li class="nav-item">
                     <a href="#home" class="nav-link">Home</a>
                 </li>
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                     <a href="#about" class="nav-link">About</a>
-                </li>
+                </li> -->
                 <li class="nav-item">
                     <a href="#experience" class="nav-link">Experience</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#awards" class="nav-link">Awards</a>
+                    <a href="#awards" class="nav-link">Achievements</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#projects" class="nav-link">Projects</a>
+                    <a href="#publications" class="nav-link">Publications</a>
                 </li>
                 <li class="nav-item">
                     <a href="#education" class="nav-link">Education</a>
@@ -39,10 +39,6 @@
                 </li>
             </ul>
             <div class="nav-controls">
-                <button class="theme-toggle" onclick="toggleDarkMode()" aria-label="다크 모드 토글">
-                    <i class="fas fa-moon dark-icon"></i>
-                    <i class="fas fa-sun light-icon"></i>
-                </button>
                 <div class="hamburger">
                     <span class="bar"></span>
                     <span class="bar"></span>
@@ -57,10 +53,6 @@
         <div class="particles-bg"></div>
         <div class="hero-container">
             <div class="hero-content">
-                <div class="hero-badge">
-                    <span class="badge-dot"></span>
-                    <span>Portfolio</span>
-                </div>
                 <h1 class="hero-title">
                     <span class="hero-greeting">Hello, I'm</span>
                     <span class="hero-name">Jaeha Choi</span>
@@ -76,8 +68,8 @@
                         <span class="indent-text">In the future, I aim to develop autonomous swarm drone systems for defense and cooperative missions — combining AI and robotics to build intelligent agents that can truly think and act together.</span>
                     </p>
                 <div class="hero-buttons">
-                    <a href="#projects" class="btn btn-primary">
-                        <span>View Projects</span>
+                    <a href="#experience" class="btn btn-primary">
+                        <span>View Experience</span>
                         <i class="fas fa-arrow-right"></i>
                     </a>
                     <a href="#contact" class="btn btn-secondary">
@@ -86,17 +78,14 @@
                     </a>
                 </div>
                 <div class="hero-social">
-                    <a href="#" class="social-link" aria-label="GitHub">
+                    <a href="https://github.com/allchiever" target="_blank" class="social-link" aria-label="GitHub">
                         <i class="fab fa-github"></i>
                     </a>
-                    <a href="#" class="social-link" aria-label="LinkedIn">
-                        <i class="fab fa-linkedin"></i>
+                    <a href="mailto:chlgocks2000@naver.com" class="social-link" aria-label="Email">
+                        <i class="fas fa-envelope"></i>
                     </a>
-                    <a href="#" class="social-link" aria-label="Twitter">
-                        <i class="fab fa-twitter"></i>
-                    </a>
-                    <a href="#" class="social-link" aria-label="Hugging Face">
-                        <i class="fas fa-robot"></i>
+                    <a href="https://huggingface.co/jaeha-choi" target="_blank" class="social-link" aria-label="Hugging Face">
+                        🤗
                     </a>
                 </div>
             </div>
@@ -116,13 +105,13 @@
                             <i class="fas fa-brain"></i>
                         </div>
                     </div>
-                    <img src="profile_square_3.jpg" alt="프로필 이미지" class="profile-img">
+                    <img src="figure/profile_square_3.jpg" alt="프로필 이미지" class="profile-img">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
+    <!-- About Section
     <section id="about" class="about">
         <div class="container">
             <h2 class="section-title">About Me</h2>
@@ -137,7 +126,7 @@
                         to academic research on Vision-Language Models (VLMs).
                     </p>
                     <div class="about-image">
-                        <img src="sch.jpg" alt="Award Achievement" class="achievement-img">
+                        <img src="figure/sch.jpg" alt="Award Achievement" class="achievement-img">
                     </div>
             
                 </div>
@@ -157,7 +146,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <!-- Experience Section -->
     <section id="experience" class="experience">
@@ -195,121 +184,97 @@
         </div>
     </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="projects">
+    <!-- Awards Section -->
+    <section id="awards" class="awards">
         <div class="container">
-            <h2 class="section-title">Projects</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="https://via.placeholder.com/400x250/4A90E2/FFFFFF?text=Project+1" alt="Project 1">
+            <h2 class="section-title">Achievements</h2>
+            <div class="awards-grid">
+                <div class="award-card">
+                    <div class="award-image">
+                        <img src="figure/presidential_science_scholarship.jpg" alt="Best Paper Award">
                     </div>
-                    <div class="project-content">
-                        <h3>[Project Title 1]</h3>
-                        <p>[Brief description of the project, its purpose and key features]</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">Flask</span>
-                            <span class="tech-tag">PostgreSQL</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#" target="_blank" class="project-link">
-                                <i class="fab fa-github"></i> GitHub
-                            </a>
-                            <a href="#" target="_blank" class="project-link">
-                                <i class="fas fa-external-link-alt"></i> Live Demo
-                            </a>
-                        </div>
+                    <div class="award-content">
+                        <h3>🏅 대통령과학장학생 대표수상자</h3>
+                        <p class="award-date">2025</p>
+                        <p class="award-organization">Ministry of Science and ICT</p>
+                        <p class="award-description">Representative Awardee of the Presidential Science Scholarship</p>
                     </div>
                 </div>
 
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="https://via.placeholder.com/400x250/E74C3C/FFFFFF?text=Project+2" alt="Project 2">
+                <div class="award-card">
+                    <div class="award-image">
+                        <img src="figure/ASVF.jpg" alt="AI Innovation Challenge 1st Place">
                     </div>
-                    <div class="project-content">
-                        <h3>[Project Title 2]</h3>
-                        <p>[Description of another project highlighting different skills and technologies]</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">JavaScript</span>
-                            <span class="tech-tag">React</span>
-                            <span class="tech-tag">Node.js</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#" target="_blank" class="project-link">
-                                <i class="fab fa-github"></i> GitHub
-                            </a>
-                            <a href="#" target="_blank" class="project-link">
-                                <i class="fas fa-external-link-alt"></i> Live Demo
-                            </a>
-                        </div>
+                    <div class="award-content">
+                        <h3>🌟ASVF Representative of Korea</h3>
+                        <p class="award-date">2024</p>
+                        <p class="award-organization">The Korea Economic Daily</p>
+                        <p class="award-description">Selected as one of Korea’s representatives to compete at ASVF, a global entrepreneurship forum hosted by The Korea Economic Daily.</p>
                     </div>
                 </div>
 
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="https://via.placeholder.com/400x250/27AE60/FFFFFF?text=Project+3" alt="Project 3">
+                <div class="award-card">
+                    <div class="award-image">
+                        <img src="figure/AWS.jpg" alt="Outstanding Student Researcher">
                     </div>
-                    <div class="project-content">
-                        <h3>[AI/ML Project Title]</h3>
-                        <p>[Description of machine learning or AI project with impressive results]</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Machine Learning</span>
-                            <span class="tech-tag">TensorFlow</span>
-                            <span class="tech-tag">PyTorch</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#" target="_blank" class="project-link">
-                                <i class="fab fa-github"></i> GitHub
-                            </a>
-                            <a href="#" target="_blank" class="project-link">
-                                <i class="fas fa-robot"></i> Hugging Face
-                            </a>
-                        </div>
+                    <div class="award-content">
+                        <h3>🏆 ART-AWS Hackathon Winner</h3>
+                        <p class="award-date">2024</p>
+                        <p class="award-organization">AWS</p>
+                        <p class="award-description">Achieved first place at the ART-AWS Hackathon and was invited for an official AWS winner interview.</p>
+                    </div>
+                </div>
+
+                <div class="award-card">
+                    <div class="award-image">
+                        <img src="https://www.socialvalue.kr/news/data/20230824/p1065587612015744_805_thum.jpg" alt="Exemplary Soldier Award">
+                    </div>
+                    <div class="award-content">
+                        <h3>🥈 DB-SNUbiz Global Startup Challenge</h3>
+                        <p class="award-date">2023</p>
+                        <p class="award-organization">DB Kim Jun-ki Cultural Foundation</p>
+                        <p class="award-description">Awarded in an international startup competition for developing an AI-based medical diagnostic assistance solution and received $2,000 in funding.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Awards Section -->
-    <section id="awards" class="awards">
+    <!-- Publications Section -->
+    <section id="publications" class="publications">
         <div class="container">
-            <h2 class="section-title">Awards & Achievements</h2>
-            <div class="awards-grid">
-                <div class="award-card">
-                    <div class="award-icon">
-                        <i class="fas fa-trophy"></i>
+            <h2 class="section-title">Publications</h2>
+            <div class="publications-grid">
+                <div class="publication-card">
+                    <div class="publication-image">
+                        <img src="figure/pipeline.png" alt="DR.SIMON System Architecture">
                     </div>
-                    <div class="award-content">
-                        <h3>[Award Name 1]</h3>
-                        <p class="award-date">[Year]</p>
-                        <p class="award-organization">[Organization/Institution]</p>
-                        <p class="award-description">[Brief description of the achievement and its significance]</p>
-                    </div>
-                </div>
-
-                <div class="award-card">
-                    <div class="award-icon">
-                        <i class="fas fa-medal"></i>
-                    </div>
-                    <div class="award-content">
-                        <h3>[Competition/Hackathon Award]</h3>
-                        <p class="award-date">[Year]</p>
-                        <p class="award-organization">[Event/Competition Name]</p>
-                        <p class="award-description">[Description of the project or solution that won the award]</p>
+                    <div class="publication-content">
+                        <h3>DR.SIMON: Domain-wise Rewrite for Segment-Informed Medical Oversight Network</h3>
+                        <p class="publication-authors">Seohyun Lee, *Suhyun Choe, *Jaeha Choi, *Jin Won Lee (2025)</p>
+                        <p class="publication-venue">MedAGI Workshop @ MICCAI 2025 — Oral Presentation 🏆 Best Paper Award</p>
+                        <p class="publication-note">* equally contributed, alphabetic</p>  
+                        <div class="publication-links">
+                            <a href="https://drsimon-rewrite.github.io/" target="_blank" class="publication-link">
+                                <i class="fas fa-external-link-alt"></i> Project Page
+                            </a>
+                        </div>
                     </div>
                 </div>
 
-                <div class="award-card">
-                    <div class="award-icon">
-                        <i class="fas fa-star"></i>
+                <div class="publication-card">
+                    <div class="publication-image">
+                        <img src="figure/lg_ai_talk_concert2025.png" alt="EXAONE 4.0 VL Features">
                     </div>
-                    <div class="award-content">
-                        <h3>[Academic/Research Recognition]</h3>
-                        <p class="award-date">[Year]</p>
-                        <p class="award-organization">[University/Research Institution]</p>
-                        <p class="award-description">[Description of academic achievement or research contribution]</p>
+                    <div class="publication-content">
+                        <h3>Exaone 4.0 VL Technical Report</h3>
+                        <p class="publication-authors">Core Contributor</p>
+                        <p class="publication-venue">LG AI Talk Concert 2025</p>
+                        <div class="publication-links">
+                            <a href="https://www.youtube.com/watch?v=EGzIMo4AizA&t=1323s" target="_blank" class="publication-link">
+                                <i class="fas fa-play"></i> Video 
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -369,24 +334,20 @@
             <div class="contact-content">
                 <div class="contact-info">
                     <h3>Let's Connect!</h3>
-                    <p>I'm always interested in new opportunities and collaborations. Feel free to reach out!</p>
+                    <p>I'm always interested in new opportunities and collaborations. <br>Feel free to reach out!</p>
                     
                     <div class="contact-links">
-                        <a href="mailto:your.email@example.com" class="contact-link">
+                        <a href="mailto:chlgocks2000@naver.com" class="contact-link">
                             <i class="fas fa-envelope"></i>
-                            <span>your.email@example.com</span>
+                            <span>chlgocks2000@naver.com</span>
                         </a>
-                        <a href="https://github.com/yourusername" target="_blank" class="contact-link">
+                        <a href="https://github.com/allchiever" target="_blank" class="contact-link">
                             <i class="fab fa-github"></i>
                             <span>GitHub</span>
                         </a>
-                        <a href="https://huggingface.co/yourusername" target="_blank" class="contact-link">
-                            <i class="fas fa-robot"></i>
+                        <a href="https://huggingface.co/jaeha-choi" target="_blank" class="contact-link">
+                            🤗
                             <span>Hugging Face</span>
-                        </a>
-                        <a href="https://linkedin.com/in/yourusername" target="_blank" class="contact-link">
-                            <i class="fab fa-linkedin"></i>
-                            <span>LinkedIn</span>
                         </a>
                     </div>
                 </div>
@@ -397,7 +358,7 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2024 [Your Name]. All rights reserved.</p>
+            <p>&copy; 2025 Jaeha Choi. All rights reserved.</p>
         </div>
     </footer>
 
