@@ -847,6 +847,23 @@ body {
     margin-top: 1rem;
 }
 
+.experience-tech .tech-tag {
+    background: var(--bg-secondary);
+    color: var(--primary-color);
+    border: 1px solid var(--border-color);
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.experience-tech .tech-tag:hover {
+    background: var(--primary-color);
+    color: white;
+    transform: translateY(-2px);
+}
+
 /* Education Section */
 .education {
     padding: 80px 0;
@@ -973,14 +990,14 @@ body {
     box-shadow: var(--shadow-medium);
 }
 
-/* 프로젝트 섹션 */
-.projects {
+/* Publications 섹션 */
+.publications {
     padding: 80px 0;
     background: var(--bg-secondary);
     position: relative;
 }
 
-.projects::before {
+.publications::before {
     content: '';
     position: absolute;
     top: 0;
@@ -991,24 +1008,30 @@ body {
     opacity: 0.3;
 }
 
-.projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+.publications-grid {
+    display: flex;
+    flex-direction: column;
     gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
-.project-card {
+.publication-card {
     background: var(--bg-primary);
     border: 1px solid var(--border-color);
-    border-radius: 20px;
+    border-radius: 15px;
     overflow: hidden;
     box-shadow: var(--shadow-medium);
     transition: all 0.4s ease;
     position: relative;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding: 1.5rem;
+    gap: 2rem;
 }
 
-.project-card::before {
+.publication-card::before {
     content: '';
     position: absolute;
     top: 0;
@@ -1021,33 +1044,38 @@ body {
     z-index: 1;
 }
 
-.project-card:hover {
-    transform: translateY(-15px) scale(1.02);
+.publication-card:hover {
+    transform: translateY(-5px) scale(1.01);
     box-shadow: var(--shadow-large);
 }
 
-.project-card:hover::before {
+.publication-card:hover::before {
     opacity: 0.05;
 }
 
-.project-card:hover .project-image img {
-    transform: scale(1.1);
+.publication-card:hover .publication-image img {
+    transform: scale(1.05);
 }
 
-.project-image {
+.publication-image {
     position: relative;
     overflow: hidden;
-    height: 250px;
+    width: 320px;
+    height: 180px;
+    flex-shrink: 0;
+    border-radius: 10px;
+    aspect-ratio: 16/9;
 }
 
-.project-image img {
+.publication-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center;
     transition: transform 0.4s ease;
 }
 
-.project-image::after {
+.publication-image::after {
     content: '';
     position: absolute;
     top: 0;
@@ -1059,83 +1087,79 @@ body {
     transition: transform 0.6s ease;
 }
 
-.project-card:hover .project-image::after {
+.publication-card:hover .publication-image::after {
     transform: translateX(100%);
 }
 
-.project-content {
-    padding: 2rem;
+.publication-content {
+    flex: 1;
     position: relative;
     z-index: 2;
+    padding: 0.5rem 0;
 }
 
-.project-content h3 {
-    font-size: 1.4rem;
-    margin-bottom: 1rem;
+.publication-content h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.8rem;
     color: var(--text-primary);
     transition: color 0.3s ease;
+    line-height: 1.3;
 }
 
-.project-card:hover .project-content h3 {
+.publication-card:hover .publication-content h3 {
     color: var(--primary-color);
 }
 
-.project-content p {
+.publication-authors {
     color: var(--text-secondary);
-    margin-bottom: 1.5rem;
-    line-height: 1.6;
-}
-
-.project-tech {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    margin-bottom: 1.5rem;
-}
-
-.tech-tag {
-    background: var(--bg-secondary);
-    color: var(--primary-color);
-    border: 1px solid var(--border-color);
-    padding: 6px 12px;
-    border-radius: 20px;
-    font-size: 0.8rem;
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
     font-weight: 500;
-    transition: all 0.3s ease;
 }
 
-.project-card:hover .tech-tag {
-    background: var(--primary-color);
-    color: white;
-    transform: translateY(-2px);
+.publication-venue {
+    color: var(--primary-color);
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
 }
 
-.project-links {
+.publication-note {
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    margin-bottom: 1rem;
+    font-style: italic;
+}
+
+.publication-links {
     display: flex;
     gap: 1rem;
 }
 
-.project-link {
-    color: var(--primary-color);
+.publication-link {
+    color: var(--accent-color);
     text-decoration: none;
-    font-weight: 500;
+    font-weight: 600;
     transition: all 0.3s ease;
-    padding: 0.5rem 1rem;
-    border-radius: 8px;
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
+    background: rgba(6, 182, 212, 0.1);
+    border: 1px solid rgba(6, 182, 212, 0.2);
+    font-size: 0.9rem;
 }
 
-.project-link:hover {
-    background: var(--primary-color);
+.publication-link:hover {
+    background: var(--accent-color);
     color: white;
     transform: translateY(-2px);
     box-shadow: var(--shadow-medium);
 }
 
-.project-link i {
-    margin-right: 0.5rem;
+.publication-link i {
+    font-size: 0.8rem;
 }
 
 /* 수상 섹션 */
@@ -1157,21 +1181,25 @@ body {
 }
 
 .awards-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
 .award-card {
     background: var(--bg-primary);
     border: 1px solid var(--border-color);
-    padding: 2rem;
-    border-radius: 20px;
+    padding: 1.5rem;
+    border-radius: 15px;
     box-shadow: var(--shadow-medium);
-    text-align: center;
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
 }
 
 .award-card::before {
@@ -1218,24 +1246,53 @@ body {
     100% { transform: rotate(360deg); }
 }
 
-.award-icon {
-    font-size: 3rem;
-    background: linear-gradient(45deg, #ffd700, #ffed4e);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    margin-bottom: 1rem;
-    transition: transform 0.3s ease;
+.award-image {
+    position: relative;
+    overflow: hidden;
+    width: 320px;
+    height: 180px;
+    flex-shrink: 0;
+    border-radius: 10px;
+    aspect-ratio: 16/9;
 }
 
-.award-card:hover .award-icon {
-    transform: scale(1.2) rotate(10deg);
+.award-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.4s ease;
+}
+
+.award-image::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.1) 50%, transparent 70%);
+    transform: translateX(-100%);
+    transition: transform 0.6s ease;
+}
+
+.award-card:hover .award-image::after {
+    transform: translateX(100%);
+}
+
+.award-card:hover .award-image img {
+    transform: scale(1.05);
+}
+
+.award-content {
+    flex: 1;
 }
 
 .award-content h3 {
     font-size: 1.3rem;
     margin-bottom: 0.5rem;
     color: var(--text-primary);
+    line-height: 1.3;
 }
 
 .award-date {
@@ -1489,12 +1546,47 @@ body {
         display: none;
     }
 
-    .projects-grid {
-        grid-template-columns: 1fr;
+    .publications-grid {
+        gap: 1.5rem;
+    }
+
+    .publication-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 1.5rem;
+    }
+
+    .publication-image {
+        width: 100%;
+        max-width: 400px;
+        height: 200px;
+        margin: 0 auto;
+    }
+
+    .publication-content {
+        padding: 1rem 0 0 0;
+    }
+
+    .publication-links {
+        justify-content: center;
     }
 
     .awards-grid {
-        grid-template-columns: 1fr;
+        gap: 1.2rem;
+    }
+
+    .award-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 1.5rem;
+        gap: 1rem;
+    }
+
+    .award-image {
+        width: 100%;
+        max-width: 400px;
+        height: 200px;
+        margin: 0 auto;
     }
 
     .contact-links {
