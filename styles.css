@@ -261,6 +261,8 @@ body {
     align-items: center;
     position: relative;
     z-index: 2;
+    overflow: hidden;
+    width: 100%;
 }
 
 /* 히어로 배지 */
@@ -297,6 +299,9 @@ body {
     font-weight: 700;
     margin-bottom: 2rem;
     line-height: 1.2;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    max-width: 100%;
 }
 
 .hero-greeting {
@@ -332,6 +337,9 @@ body {
     font-size: 1.5rem;
     font-weight: 600;
     color: var(--primary-color);
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    max-width: 100%;
 }
 
 /* 타이프라이터 효과 */
@@ -396,6 +404,9 @@ body {
     color: var(--text-secondary);
     line-height: 1.8;
     animation: slideInUp 0.8s ease-out 1.2s both;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    max-width: 100%;
 }
 
 .hero-buttons {
@@ -1559,6 +1570,14 @@ body {
         overflow-wrap: break-word;
     }
 
+    .hero-subtitle {
+        font-size: 1.2rem;
+    }
+
+    .hero-description {
+        font-size: 1rem;
+    }
+
     .hero-buttons {
         justify-content: center;
     }
@@ -1710,6 +1729,14 @@ body {
         font-size: 1.8rem;
         word-break: keep-all;
         overflow-wrap: break-word;
+    }
+
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+
+    .hero-description {
+        font-size: 0.95rem;
     }
 
     .section-title {
