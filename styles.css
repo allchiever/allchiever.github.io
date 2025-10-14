@@ -1714,6 +1714,12 @@ body {
         width: 100%;
         max-width: 300px;
     }
+    /* 모바일에서는 타자 효과로 가로 밀림 방지: 줄바꿈 허용 */
+    .hero-subtitle.typewriter {
+        white-space: normal;
+        border-right: 0;
+        animation: none;
+    }
 }
 
 @media (max-width: 480px) {
@@ -1751,6 +1757,12 @@ body {
     .btn {
         width: 100%;
         text-align: center;
+    }
+    .hero-subtitle.typewriter {
+        white-space: normal;
+        border-right: 0;
+        animation: none;
+        line-height: 1.35;
     }
 }
 
