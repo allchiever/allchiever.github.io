@@ -1809,3 +1809,21 @@ body {
 ::-webkit-scrollbar-thumb:hover {
     background: #357ABD;
 }
+
+/* Upcoming (future) timeline entries */
+.upcoming-badge {
+    display: inline-block;
+    margin-left: 0.5rem;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: #4A90E2;
+    border: 1px dashed #4A90E2;
+    vertical-align: middle;
+}
+
+.timeline-upcoming .timeline-content {
+    border: 1.5px dashed #4A90E2;
+    opacity: 0.85;
+}
