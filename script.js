@@ -348,3 +348,20 @@ window.addEventListener('load', () => {
 window.addEventListener('load', () => {
     document.body.classList.add('loaded');
 });
+
+// Last updated date: latest commit on GitHub, falls back to the static date in the HTML
+(function () {
+    const el = document.getElementById('last-updated-date');
+    if (!el) return;
+    const fmt = (d) => d.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+    fetch('https://api.github.com/repos/allchiever/allchiever.github.io/commits?per_page=1')
+        .then((r) => (r.ok ? r.json() : Promise.reject()))
+        .then((data) => {
+            const iso = data[0] && data[0].commit && data[0].commit.committer && data[0].commit.committer.date;
+            if (!iso) return;
+            const d = new Date(iso);
+            el.textContent = fmt(d);
+            el.setAttribute('datetime', iso.slice(0, 10));
+        })
+        .catch(() => {});
+})();
